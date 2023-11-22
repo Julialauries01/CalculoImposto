@@ -1,0 +1,58 @@
+[
+   {
+      "id": "1",
+      "category": "livro",
+      "name": "A branca de neve",
+      "price": 10.00,
+      "gender": "Fantasia"
+   },
+   {
+      "id": "2",
+      "category": "livro",
+      "name": "Rapunzel",
+      "price": 11.00,
+      "gender": "Fantasia"
+   },
+   {
+      "id": "3",
+      "category": "livro",
+      "name": "Chapeuzinho Vermelho",
+      "price": 12.00,
+      "gender": "Fantasia"
+   },
+   {
+      "id": "4",
+      "category": "bebida",
+      "name": "Absolut",
+      "validate": "10/10/2025",
+      "price": 160.00
+   },
+   {
+      "id": "5",
+      "category": "bebida",
+      "name": "Sminorff",
+      "validate": "10/02/2026",
+      "price": 140.00
+   },
+   {
+      "id": "6",
+      "category": "bebida",
+      "name": "heineken",
+      "validate": "01/10/2025",
+      "price": 4.00
+   },
+   {
+      "id": "7",
+      "category": "bebida",
+      "name": "Suco",
+      "validate": "29/03/2025",
+      "price": 8.00
+   },
+   {
+      "id": "8",
+      "category": "livro",
+      "name": "A branca de neve2",
+      "price": 10.00,
+      "gender": "Fantasia"
+   }
+]
