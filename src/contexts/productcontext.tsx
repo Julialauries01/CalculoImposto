@@ -16,6 +16,7 @@ interface ProductProps {
    category: string
    product : IProductsDTO
    handleSetProduct: (product : any) => void
+   handleSetCategory: (categoria :  string) => void 
 }
 
 export const ProductContext = createContext<ProductProps>({
@@ -37,8 +38,13 @@ export function ProductContextComponent ({ children }:ContextProps) {
       setProduct(product)
    }
 
+   function handleSetCategory(categoria: string){
+      console.log(categoria)
+      setCategory(categoria)
+    }
+
   return (
-      <ProductContext.Provider value={ {  user,getProduct ,category , product, handleSetProduct} }>
+      <ProductContext.Provider value={ {  user,getProduct ,category , product, handleSetProduct, handleSetCategory} }>
          {
             children
          }

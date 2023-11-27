@@ -10,7 +10,7 @@ import MainUser from "../MainUser";
 const MainAdm = () => {
   return (
     <Main>
-          <MainUser sublineState={false} containerResume={false} containerPlus={false} isAdmUser={true} />
+          <MainUser sublineState={false} containerResume={false} containerPlus={true} isAdmUser={true} />
     </Main>
   );
 };

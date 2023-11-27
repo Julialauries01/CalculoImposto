@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import {
    Container,
    InfoLine,
@@ -9,15 +9,54 @@ import {
    ValorProduto,
  } from "../styles";
 import { ProductContext } from '@/contexts/productcontext';
+import axios from 'axios';
+import { IProductsDTO } from '@/dtos/IProductsDTO';
 
- interface ResumeProps {selectedProduct: string
-
+ interface ResumeProps {
+  selectedProduct: string
+  selectedState: string
+  selectedCategory: string
 }
 
-export const IndexResume = ({selectedProduct}:ResumeProps) => {
 
-  const {product} = useContext(ProductContext)
 
+export const IndexResume = ({selectedProduct,selectedState,selectedCategory}:ResumeProps) => {
+
+  const {product, category} = useContext(ProductContext)
+
+  const stateNumber = category ==="sp" ? "1" : "0"
+
+  const [ currentProduct, setCurrentProduct ] = useState<IProductsDTO>({} as IProductsDTO)
+
+  async function getICMS( ) {
+
+    try {
+     const res = await axios.put(`/api/${selectedCategory}/editar/${stateNumber}`,product).then(res =>  res.data)
+      if (res){
+        setCurrentProduct(res)
+      }
+    }catch(error){
+      console.log(error)
+    
+    
+  }
+}
+  useEffect(() => {
+     const fetch = async () =>  {
+      try {
+        const res = await getICMS()
+        if(res) {
+          console.log('retorno fetch')
+        }
+      }
+      catch(error){
+        console.log(error)
+      }
+     }
+
+    fetch()
+    
+  },[product, category]) 
 
   return (
     <Container>
@@ -26,13 +65,13 @@ export const IndexResume = ({selectedProduct}:ResumeProps) => {
         <ResumeValue>
         <InfoLine>Preço</InfoLine>
 
-        <ValorProduto>R$ {product.price}</ValorProduto>
+        <ValorProduto>R$ {currentProduct.preco}</ValorProduto>
         </ResumeValue>
 
         <ResumeValue>
         <InfoLine>ICMS</InfoLine>
 
-        <ValorProduto>R$ {product.price * 18 / 100} </ValorProduto>
+        <ValorProduto>R$ {Math.round(currentProduct.imposto)} </ValorProduto>
         </ResumeValue>
       </SectionResume>
 
@@ -40,7 +79,7 @@ export const IndexResume = ({selectedProduct}:ResumeProps) => {
       <ResumeValue>
         <InfoLine>Total</InfoLine>
 
-        <ValorProduto>R$ { product.price + (product.price * 18 / 100)} </ValorProduto>
+        <ValorProduto>R$ {currentProduct.total}</ValorProduto>
         </ResumeValue>        </SectionValue>
     </Container>
    )

@@ -9,7 +9,7 @@ export const Main = styled.main`
   justify-content: center;
   display: flex;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
 
   `
   export const Container = styled.div` 
@@ -18,7 +18,6 @@ export const Main = styled.main`
   border-radius: 10px;
   justify-content: space-around;
   `
-
 
 export const OptionSection =  styled.div`
 background-color: white;
@@ -46,14 +45,8 @@ width: 35rem;
       }
 
 `
-
-  export const ButtonExperiment = styled(Button)`
-    margin-right: 7.5px;
-    background: #003d7681;
-
-  `
 export const SectionButs = styled.div`
-margin-left: 25.4rem;
+margin-left: 19rem;
 display: flex;
 `
 
@@ -79,7 +72,7 @@ border-radius: 10px;
 width: 45rem;
 `
 
-export const ContainerInput = styled.div`
+export const ContainerInput = styled.form`
 display: flex;
 flex-direction: column;
 align-items: center;

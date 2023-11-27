@@ -4,7 +4,6 @@ import MainEditItem from '../../../../../components/MainAdm/MainEditItem/page';
 import Nav from '../../../../../components/Nav/page';
 import { IProductsDTO } from '@/dtos/IProductsDTO'
 import {
-  ButtonExperiment,
   Container,
   Main,
   OptionSection,
@@ -22,6 +21,7 @@ import { fetchProductData } from '@/api/teste';
 const index =  async ({params }: {params: { categoria: string ,id:string}}) => {
 
 const product : IProductsDTO = await fetchProductData(params.categoria, params.id)
+
 
   return (
   

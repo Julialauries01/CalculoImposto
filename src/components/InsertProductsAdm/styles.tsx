@@ -29,17 +29,17 @@ border-radius: 10px;
 width: rem;
 `
 
-  export const Subline = styled.h2`
+  export const Subline = styled.div`
 
   align-items: center;
-  justify-content: center;
+  
   text-align: center;
- 
-
   padding: 10px;
-  justify-content: space-around;
   font-size: 14px;  
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 
   @media (max-width: 500px) {
@@ -81,7 +81,7 @@ border-radius: 10px;
 width: 45rem;
 `
 
-export const ContainerInput = styled.div`
+export const ContainerInput = styled.form`
 display: flex;
 flex-direction: column;
 align-items: center;
