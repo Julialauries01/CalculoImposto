@@ -16,8 +16,7 @@ import {
   ContainerInput,
   Input,
 } from "./styles";
-import { config } from "process";
-import axios from "axios";
+
 import { addProduct } from "@/api/teste";
 import { IProductsDTO } from "@/dtos/IProductsDTO";
 

@@ -4,14 +4,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  margin: -8px;
+  margin-top: 100px;
 
-  flex-direction: row;
+
+flex-direction: row;
+  display: flex;
   justify-content: center;
-  margin-top: 50px;
-    max-width: 900px;
-    width: 90%;
-    display: flex;
+  align-items: center;
+
 
   `
   export const Container = styled.div` 

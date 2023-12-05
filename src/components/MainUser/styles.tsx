@@ -56,13 +56,12 @@ height: 100px;
   export const Subline = styled.h2`
   padding: 10px;
   margin-left: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 14px;  
   font-weight: normal;
-  text-align: center;
   display: flex;
-
-  max-width: 80%;
+  align-items: center;
+  max-width: 90%;
 
   @media (max-width: 500px) {
         font-size: 14px;
@@ -195,9 +194,8 @@ export const ButtonsContainer = styled.div`
 
 export const IconContainer = styled.div`
 display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
+justify-content: end;
+align-items: end;
 color: black;
 cursor: pointer;
 `

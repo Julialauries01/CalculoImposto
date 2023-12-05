@@ -8,5 +8,4 @@ flex-direction: column;
 align-items: center;
 padding: 0;
 overflow-x:hidden ;
-font-family: "Montserrat", sans-serif;
 `

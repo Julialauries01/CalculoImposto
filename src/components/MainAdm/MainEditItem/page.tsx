@@ -2,15 +2,11 @@
 import { Button } from "@/styles/Button";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
 import { useForm, SubmitHandler } from "react-hook-form";
-
 import {
   Container,
   Main,
   OptionSection,
-  SectionInput,
-  Subline,
   ButtonCancel,
   SectionButs,
   ButtonEditar,
@@ -19,8 +15,6 @@ import {
 } from "./styles";
 import { IProductsDTO } from "@/dtos/IProductsDTO";
 import { editProduct, fetchProductData } from "@/api/teste";
-import axios from "axios";
-import server from "@/api/config";
 import { useRouter } from "next/navigation";
 
 interface EditMainProps {
@@ -78,7 +72,6 @@ const EditMain = async ({
     <Main>
       <Container>
         <OptionSection>
-          <Subline></Subline>
 
           {id ? (
             <ContainerInput id="Forms" onSubmit={handleSubmit(onSubmit)}>

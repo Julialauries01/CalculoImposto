@@ -26,11 +26,6 @@ interface MainUserProps {
   isAdmUser: boolean 
 }
 
-type CategoryProps = {
-  categoria: 'livros'|'celulares'
-}
-
-
 export function  MainUser ({containerResume,containerPlus,sublineState,isAdmUser}:MainUserProps) {
   const [products, setProducts] = useState<IProductsDTO[]>([])
   const [selectedCategory, setSelectedCategory] = useState('')
@@ -70,7 +65,7 @@ export function  MainUser ({containerResume,containerPlus,sublineState,isAdmUser
     }
 
    fetch()
-   
+  
  },[products]) 
  
 
@@ -87,6 +82,17 @@ export function  MainUser ({containerResume,containerPlus,sublineState,isAdmUser
               <option value="celulares" >Celulares</option>
               <option value="livros" >Livros</option>
               </select>   
+              { containerPlus &&
+
+<IconContainer>
+<Link href='/AdmPage/InsertItem' >
+<FaPlus size={20}
+/> 
+  </Link>
+
+</IconContainer>
+}
+
    
           </Subline>
 
@@ -114,20 +120,10 @@ export function  MainUser ({containerResume,containerPlus,sublineState,isAdmUser
                 <ListColumnContainer >
                   <span>Nome</span>
 
-                  <span>{ 'livro'=== 'livro' ? 'Gênero': 'Validade'}</span>
+                  <span>{ selectedCategory === 'livros' ? 'Gênero' : 'Marca'}</span>
 
                   <span>Preço</span>
-                  { containerPlus &&
-
-                  <IconContainer>
-                  <Link href='/AdmPage/InsertItem' >
-                  <FaPlus size={20}
-                  /> 
-                    </Link>
-
-                  </IconContainer>
-}
-
+                
                 </ListColumnContainer>
                 { products.length!== 0 && products.map(item => 
                 

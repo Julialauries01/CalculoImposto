@@ -53,7 +53,7 @@ async function fetchProductData(categoria: string , id: string) {
     }
   }
 
-  async function addProduct(body:object) {
+  async function addProduct(body: any) {
     try {
       const res = await axios.post(`/api/${body.categoria}/add`, body)
       if(res){

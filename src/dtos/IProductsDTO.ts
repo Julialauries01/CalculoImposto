@@ -7,5 +7,6 @@ export interface IProductsDTO {
    marca?: string,
    genero?: string,
    total: number,
+   tipo?: string,
 }
 

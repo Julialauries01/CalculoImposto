@@ -71,7 +71,7 @@ export const IndexResume = ({selectedProduct,selectedState,selectedCategory}:Res
         <ResumeValue>
         <InfoLine>ICMS</InfoLine>
 
-        <ValorProduto>R$ {Math.round(currentProduct.imposto)} </ValorProduto>
+        <ValorProduto>R$ {currentProduct.imposto ? (currentProduct.imposto) : null } </ValorProduto>
         </ResumeValue>
       </SectionResume>
 
